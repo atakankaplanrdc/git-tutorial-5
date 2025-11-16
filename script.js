@@ -1,4 +1,11 @@
-console.log("This is version - 3.2");
-console.log("This is a new feature too!!!");
-console.log("Features are done in this feature2 branch!");
-console.log("feature-2");
+function multiple(firstNumber){
+    return function multipleWithSecond(secondNumber) {
+        return firstNumber * secondNumber;
+    }
+}
+
+let number1 = Number(prompt("Birinci sayiyi giriniz:"));
+let number2 = Number(prompt("Birinci sayiyi giriniz:"));
+
+let multipleWith = multiple(number1);
+console.log("Result: " + multipleWith(number2));
