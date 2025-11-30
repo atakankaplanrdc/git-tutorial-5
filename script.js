@@ -1,16 +1,30 @@
-function EmployeesOfAtakansCompany(firstName, lastname, gender) {
-    this.userName = firstName;
-    this.userSurname = lastname;
+class Person {
+    constructor(name, surname, age, gender) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.gender = gender;
+    }
+}
+
+class MaleBaby extends Person {
+    constructor(name, surname){
+        super(name, surname, 0, "male");
+    }
+}
+
+let baby = new MaleBaby("Ege", "Deneme");
+
+console.log(baby);
+
+
+function Human(firstName, lastName, age, gender){
+    this.name = firstName;
+    this.surname = lastName;
+    this.age = age;
     this.gender = gender;
 }
 
+let baby2 = new Human("Beliz", "Deneme", 0, "female");
 
-let person1 = new EmployeesOfAtakansCompany("Atakan", "Kaplan", "erkek");
-let person2 = new EmployeesOfAtakansCompany("İrem", "Demirer", "kadın");
-let person3 = new EmployeesOfAtakansCompany("Damla", "Koldaş", "kadın");
-
-EmployeesOfAtakansCompany.prototype.printFullName = function() {
-    console.log(this.userName + " " + this.userSurname);
-}
-
-person1.printFullName();
+console.log(baby2);
